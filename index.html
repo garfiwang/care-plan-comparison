@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>蔡欣妤小姐｜為未來的自己，預約一份優雅與尊嚴</title>
+  <style>
+    /* =========================================
+       CSS RESET & VARIABLES (粉紅 ✕ 莫蘭迪藍 主題)
+       ========================================= */
+    :root {
+      /* 莫蘭迪藍 (Muted Morandi Slate Blue) */
+      --blue-primary: #4a6b82;
+      --blue-dark: #273d4d;
+      --blue-light: #6a8ba0;
+      --blue-subtle: #eff4f8;
+      --blue-border: #d0dfe8;
+
+      /* 優雅粉紅 / 玫瑰粉 (Muted Dusty Rose & Pink) */
+      --pink-primary: #d86b85;
+      --pink-dark: #b84c66;
+      --pink-light: #fcf1f4;
+      --pink-subtle: #fdf7f9;
+      --pink-border: #f7c9d4;
+
+      /* 漸層主題 */
+      --hero-gradient: linear-gradient(135deg, #273d4d 0%, #4a6b82 50%, #c96b82 100%);
+      --btn-gradient: linear-gradient(135deg, #d86b85 0%, #4a6b82 100%);
+      --card-highlight-gradient: linear-gradient(180deg, #fff7f9 0%, #ffffff 40%);
+
+      /* 背景與文字 */
+      --soft-bg: #f5f8fa;
+      --card-bg: #ffffff;
+      --text-main: #22313f;
+      --text-muted: #64748b;
+      --accent-gold: #d97706;
+
+      /* 陰影與圓角 */
+      --shadow-sm: 0 3px 10px rgba(74, 107, 130, 0.06);
+      --shadow-md: 0 10px 28px rgba(74, 107, 130, 0.12), 0 4px 12px rgba(216, 107, 133, 0.08);
+      --shadow-lg: 0 18px 40px rgba(39, 61, 77, 0.18);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--soft-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 16px;
+      padding-bottom: 40px;
+    }
+
+    /* 手機最佳化容器 */
+    .poster-container {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      min-height: 100vh;
+      box-shadow: 0 0 35px rgba(74, 107, 130, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* =========================================
+       HERO COVER (意境美圖 + 感性大標)
+       ========================================= */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      background-color: #273d4d;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.92);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(39, 61, 77, 0.15) 0%, rgba(39, 61, 77, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px 20px;
+      color: #ffffff;
+    }
+
+    .hero-badge {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-overlay h1 {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-client {
+      font-size: 14px;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .hero-client span {
+      background: #ffffff;
+      color: var(--blue-dark);
+      padding: 1px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* =========================================
+       感性引言區 (Warm Touch Quote)
+       ========================================= */
+    .quote-box {
+      margin: -16px 16px 20px;
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--pink-primary);
+    }
+
+    .quote-box p {
+      font-size: 13.5px;
+      color: var(--blue-dark);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .quote-box strong {
+      color: var(--pink-dark);
+    }
+
+    /* =========================================
+       手機黏貼導覽 (簡單兩案切換)
+       ========================================= */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      padding: 10px 16px 12px;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 99;
+      border-bottom: 1px solid var(--blue-border);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px 4px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border: 1.5px solid var(--blue-border);
+      background: #ffffff;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .tab-btn small {
+      font-size: 10.5px;
+      font-weight: normal;
+    }
+
+    .tab-btn.active {
+      background: var(--btn-gradient);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(74, 107, 130, 0.22);
+    }
+
+    .tab-btn.active small {
+      color: #fceef2;
+    }
+
+    /* 內容內縮區塊 */
+    .content-pad {
+      padding: 0 16px;
+    }
+
+    /* =========================================
+       感性對比卡片 (極簡文字 ✕ 視覺對焦)
+       ========================================= */
+    .visual-compare-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--blue-border);
+    }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--pink-border);
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 核心 3 大溫度對照指標 */
+    .emotion-metric {
+      background: var(--soft-bg);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 12px;
+      border-left: 3.5px solid var(--blue-light);
+    }
+
+    .emotion-metric.gold-border {
+      border-left-color: var(--pink-primary);
+      background: var(--pink-subtle);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .metric-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .metric-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .metric-comparison {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .plan-pill {
+      flex: 1;
+      background: #ffffff;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(74, 107, 130, 0.12);
+      text-align: center;
+    }
+
+    .plan-pill.winner {
+      border: 1.5px solid var(--pink-primary);
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(216, 107, 133, 0.12);
+    }
+
+    .pill-label {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .pill-num {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--blue-dark);
+    }
+
+    .pill-num.pink {
+      color: var(--pink-dark);
+      font-size: 16px;
+    }
+
+    .pill-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .pill-desc.pink {
+      color: var(--pink-dark);
+      font-weight: 600;
+    }
+
+    /* =========================================
+       方案 B 推薦大卡 (溫暖主推)
+       ========================================= */
+    .plan-b-spotlight {
+      background: var(--card-highlight-gradient);
+      border: 2px solid var(--pink-primary);
+      border-radius: var(--radius-md);
+      padding: 22px 18px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .crown-badge {
+      position: absolute;
+      top: -12px;
+      right: 18px;
+      background: linear-gradient(135deg, #d86b85 0%, #e27d95 100%);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(216, 107, 133, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .plan-b-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .plan-b-name {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--blue-dark);
+    }
+
+    .plan-b-tag {
+      font-size: 12px;
+      color: var(--pink-dark);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .plan-b-price {
+      text-align: right;
+    }
+
+    .price-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--pink-dark);
+      line-height: 1.1;
+    }
+
+    .price-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* 情感化 4 大保障亮點 */
+    .heart-points {
+      list-style: none;
+      margin-top: 14px;
+    }
+
+    .heart-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #fce4ec;
+      font-size: 13.5px;
+    }
+
+    .heart-point-item:last-child {
+      border-bottom: none;
+    }
+
+    .heart-icon {
+      font-size: 16px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .heart-text strong {
+      color: var(--pink-dark);
+      font-weight: 700;
+    }
+
+    /* =========================================
+       生活陪伴意境圖文區 (Second Image Block)
+       ========================================= */
+    .story-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--blue-border);
+    }
+
+    .story-img-box {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .story-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-content {
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--blue-subtle) 100%);
+    }
+
+    .story-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .story-desc {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .care-cost-mini {
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      border: 1px solid var(--blue-border);
+      font-size: 12px;
+    }
+
+    .care-cost-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      color: var(--text-muted);
+    }
+
+    .care-cost-row.bold {
+      font-weight: 700;
+      color: var(--blue-dark);
+      border-top: 1px dashed #e2e8f0;
+      margin-top: 4px;
+      padding-top: 6px;
+    }
+
+    .care-cost-row.bold span:last-child {
+      color: var(--pink-dark);
+    }
+
+    /* =========================================
+       方案 A 概要卡片 (淡化但清楚)
+       ========================================= */
+    .plan-a-card {
+      background: #ffffff;
+      border: 1.5px solid var(--blue-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 22px;
+    }
+
+    .plan-a-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .plan-a-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .plan-a-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--blue-primary);
+    }
+
+    .plan-a-features {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       折衷靈感 (A+ 聰明搭)
+       ========================================= */
+    .clever-choice {
+      background: var(--pink-subtle);
+      border: 1.5px dashed var(--pink-primary);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .clever-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--pink-dark);
+      background: #ffffff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 6px;
+      border: 1px solid var(--pink-border);
+    }
+
+    .clever-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 4px;
+    }
+
+    .clever-desc {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    /* =========================================
+       FOOTER (顧問服務資訊)
+       ========================================= */
+    .footer {
+      background: #ffffff;
+      border-top: 2px solid var(--pink-border);
+      padding: 24px 20px 20px;
+      text-align: center;
+    }
+
+    .consultant-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #eff4f8 0%, #fdf2f5 100%);
+      border: 1px solid var(--blue-border);
+      padding: 10px 22px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+
+    .consultant-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: 0.3px;
+    }
+
+    .consultant-name span {
+      color: var(--pink-dark);
+    }
+
+    .phone-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 320px;
+      margin: 8px auto 14px;
+      background: var(--btn-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 50px;
+      font-size: 15.5px;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(74, 107, 130, 0.28);
+      transition: transform 0.15s ease;
+    }
+
+    .phone-btn:active {
+      transform: scale(0.98);
+    }
+
+    .disclaimer {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .print-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .btn-action {
+      background: #f1f5f9;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #475569;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .poster-container { box-shadow: none; max-width: 100%; }
+      .tab-bar, .print-bar, .phone-btn { display: none !important; }
+      .section-view { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="poster-container">
+  
+  <!-- ================= 頂部 HERO：意境美圖 ✕ 溫柔標題 ================= -->
+  <header class="hero-visual">
+    <img src="hero_serene_woman.jpg" alt="優雅從容的未來" class="hero-img">
+    <div class="hero-overlay">
+      <div class="hero-badge">
+        🌸 專屬客製・長照與醫療守護
+      </div>
+      <h1>為未來的自己，預約一份尊嚴與從容</h1>
+      <div class="hero-client">
+        敬致：<span>蔡欣妤 小姐</span> (44歲・女性)
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 感性引言 ================= -->
+  <div class="quote-box">
+    <p>
+      「買保險不是因為有人要離開，而是<strong>因為有人要繼續生活</strong>。<br>
+      每天多省下一杯咖啡的銅板，換來未來走不動、生病時，依舊能被這個世界<strong>溫柔相待的體面</strong>。」
+    </p>
+  </div>
+
+  <!-- ================= 手機導覽切換 TAB ================= -->
+  <nav class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('compare', this)">
+      <span>核心溫度比較</span>
+      <small>一眼看懂</small>
+    </button>
+    <button class="tab-btn" onclick="switchTab('planB', this)">
+      <span>首選 B 方案</span>
+      <small>年繳 36,909</small>
+    </button>
+    <button class="tab-btn" onclick="switchTab('planA', this)">
+      <span>基礎 A 方案</span>
+      <small>年繳 21,365</small>
+    </button>
+  </nav>
+
+  <div class="content-pad">
+
+    <!-- ================= 區塊 1：極簡 3 大溫度對照 (感性對比卡片) ================= -->
+    <div class="visual-compare-card section-view" id="view-compare">
+      <div class="card-title-row">
+        <div class="card-title">
+          <span>✨</span> 兩個方案，給妳兩種截然不同的底氣
+        </div>
+      </div>
+
+      <!-- 指標 1：每月照護金 -->
+      <div class="emotion-metric gold-border">
+        <div class="metric-header">
+          <div class="metric-name">
+            <span>🌸</span> 每月長照生活金（給付 10 年）
+          </div>
+          <div class="metric-sub">照護品質的關鍵</div>
+        </div>
+        <div class="metric-comparison">
+          <div class="plan-pill">
+            <div class="pill-label">方案 A (基礎)</div>
+            <div class="pill-num">10,000 <small style="font-size:11px;">元/月</small></div>
+            <div class="pill-desc">心意有到，家人仍需貼補</div>
+          </div>
+          <div style="font-size: 16px; color: var(--pink-dark); font-weight: bold;">➔</div>
+          <div class="plan-pill winner">
+            <div class="pill-label">方案 B (首選★)</div>
+            <div class="pill-num pink">20,000 <small style="font-size:11px;">元/月</small></div>
+            <div class="pill-desc pink">翻倍守護！看護薪資有著落</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 指標 2：醫療自費雜費 -->
+      <div class="emotion-metric">
+        <div class="metric-header">
+          <div class="metric-name">
+            <span>🏥</span> 住院醫療自費額度（標靶/醫材）
+          </div>
+          <div class="metric-sub">生病時的選擇權</div>
+        </div>
+        <div class="metric-comparison">
+          <div class="plan-pill">
+            <div class="pill-label">方案 A (基礎)</div>
+            <div class="pill-num">30 萬元</div>
+            <div class="pill-desc">一般自費手術夠用</div>
+          </div>
+          <div style="font-size: 16px; color: var(--blue-primary); font-weight: bold;">➔</div>
+          <div class="plan-pill winner">
+            <div class="pill-label">方案 B (首選★)</div>
+            <div class="pill-num pink">40 萬元</div>
+            <div class="pill-desc pink">多 10 萬！用好藥不必猶豫</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 指標 3：每天付出保費 -->
+      <div class="emotion-metric">
+        <div class="metric-header">
+          <div class="metric-name">
+            <span>☕️</span> 每天平均投入保費
+          </div>
+          <div class="metric-sub">今天的微小付出</div>
+        </div>
+        <div class="metric-comparison">
+          <div class="plan-pill">
+            <div class="pill-label">方案 A (基礎)</div>
+            <div class="pill-num">約 63 元 <small style="font-size:11px;">/天</small></div>
+            <div class="pill-desc">年繳 21,365 元</div>
+          </div>
+          <div style="font-size: 16px; color: var(--pink-dark); font-weight: bold;">➔</div>
+          <div class="plan-pill winner">
+            <div class="pill-label">方案 B (首選★)</div>
+            <div class="pill-num pink">約 108 元 <small style="font-size:11px;">/天</small></div>
+            <div class="pill-desc pink">每天僅多 45 元 (少喝半杯拿鐵)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 區塊 2：生活陪伴意境圖文 (溫暖故事箱) ================= -->
+    <div class="story-card section-view" id="view-story">
+      <div class="story-img-box">
+        <img src="warm_care_companion.jpg" alt="溫柔細膩的長照陪伴" class="story-img">
+      </div>
+      <div class="story-content">
+        <div class="story-title">
+          <span>🌿</span> 「不讓愛我的人，受現實折磨」
+        </div>
+        <div class="story-desc">
+          真正的孝順與愛，是把自己照顧好。長照現場最怕的不是生病，而是日復一日把家人的積蓄與耐心磨光。<br>
+          方案 B 每月 <strong>20,000 元</strong> 的穩定照護金，就是替妳請一位好幫手，讓家人純粹陪伴，不用為錢紅了眼眶。
+        </div>
+
+        <div class="care-cost-mini">
+          <div class="care-cost-row">
+            <span>聘請外籍看護月薪 + 伙食</span>
+            <span>約 28,000 ~ 30,000 元</span>
+          </div>
+          <div class="care-cost-row">
+            <span>紙尿褲、管灌營養品、耗材</span>
+            <span>約 5,000 ~ 8,000 元</span>
+          </div>
+          <div class="care-cost-row bold">
+            <span>方案 B 實質減輕負擔</span>
+            <span>直接覆蓋近 70% 看護開銷！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 區塊 3：方案 B 推薦大卡 (溫暖主推) ================= -->
+    <div class="plan-b-spotlight section-view" id="view-planB">
+      <div class="crown-badge">
+        👑 顧問真心首選推薦
+      </div>
+      <div class="plan-b-header">
+        <div>
+          <div class="plan-b-name">方案 B【尊嚴抗險型】</div>
+          <div class="plan-b-tag">翻倍長照 + 頂級醫療自負額 (計劃 4A)</div>
+        </div>
+        <div class="plan-b-price">
+          <div class="price-num">36,909<small style="font-size:12px; font-weight:normal;"> 元/年</small></div>
+          <div class="price-sub">月繳 3,249 元 (約 108 元/天)</div>
+        </div>
+      </div>
+
+      <ul class="heart-points">
+        <li class="heart-point-item">
+          <span class="heart-icon">🌟</span>
+          <div class="heart-text">
+            <strong>24 萬應急金：</strong>長照或完全失能確診即領，從容應急安家。
+          </div>
+        </li>
+        <li class="heart-point-item">
+          <span class="heart-icon">💖</span>
+          <div class="heart-text">
+            <strong>每月 2 萬生活金：</strong>保證給付 10 年，累計達 <strong>240 萬元</strong>。
+          </div>
+        </li>
+        <li class="heart-point-item">
+          <span class="heart-icon">🛡️</span>
+          <div class="heart-text">
+            <strong>40 萬醫療自費：</strong>高階醫材、標靶用藥，病房每日限額 4,000 元。
+          </div>
+        </li>
+        <li class="heart-point-item">
+          <span class="heart-icon">🕊️</span>
+          <div class="heart-text">
+            <strong>豁免保費：</strong>若發生 1~8 級失能，全球人壽代繳後續保費，保障持續有效。
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ================= 區塊 4：方案 A 概要卡片 ================= -->
+    <div class="plan-a-card section-view" id="view-planA">
+      <div class="plan-a-header">
+        <div class="plan-a-title">方案 A【基礎打底型】</div>
+        <div class="plan-a-price">21,365 元/年 <small style="font-size:11px; color:var(--text-muted);">(月繳 1,879)</small></div>
+      </div>
+      <div class="plan-a-features">
+        • 長照一次金 12 萬 ｜ 每月長照金 1 萬/月 (10年最高 120 萬)<br>
+        • 自負額醫療雜費 30 萬 ｜ 病房每日限額 3,000 元<br>
+        • 適合預算精省打底，但照護缺口未來仍需家人額外分擔。
+      </div>
+    </div>
+
+    <!-- ================= 區塊 5：貼心折衷方案 (A+ 聰明搭) ================= -->
+    <div class="clever-choice">
+      <div class="clever-badge">💡 預算有限的私房搭法</div>
+      <div class="clever-title">「方案 A+ 折衷組合」年繳約 22,450 元</div>
+      <div class="clever-desc">
+        主約維持 1 萬，<strong>僅多繳 1,086 元</strong>將醫療升級為 4A，住院自費額度即可瞬間升至 <strong>40 萬元</strong>！
+      </div>
+    </div>
+
+  </div> <!-- /content-pad -->
+
+  <!-- ================= 底部 FOOTER ================= -->
+  <footer class="footer">
+    <div class="consultant-badge">
+      <div class="consultant-name">
+        顧問：問大師家族辦公室 <span>|</span> 王執定
+      </div>
+    </div>
+
+    <div>
+      <a href="tel:0927860882" class="phone-btn">
+        <span>📞 一鍵撥號諮詢：0927-860-882</span>
+      </a>
+    </div>
+
+    <div class="disclaimer">
+      備註：詳細保障內容以全球人壽正式保單條款為準。
+    </div>
+
+    <div class="print-bar">
+      <button class="btn-action" onclick="window.print()">🖨️ 列印 / 另存 PDF</button>
+      <button class="btn-action" onclick="navigator.clipboard.writeText(window.location.href); alert('網址已複製！');">🔗 複製分享連結</button>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ================= 互動控制腳本 ================= -->
+<script>
+  function switchTab(mode, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const viewCompare = document.getElementById('view-compare');
+    const viewStory = document.getElementById('view-story');
+    const viewPlanB = document.getElementById('view-planB');
+    const viewPlanA = document.getElementById('view-planA');
+
+    if (mode === 'planA') {
+      viewCompare.style.display = 'none';
+      viewStory.style.display = 'none';
+      viewPlanB.style.display = 'none';
+      viewPlanA.style.display = 'block';
+      viewPlanA.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (mode === 'planB') {
+      viewCompare.style.display = 'none';
+      viewStory.style.display = 'block';
+      viewPlanB.style.display = 'block';
+      viewPlanA.style.display = 'none';
+      viewPlanB.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      viewCompare.style.display = 'block';
+      viewStory.style.display = 'block';
+      viewPlanB.style.display = 'block';
+      viewPlanA.style.display = 'block';
+      viewCompare.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
+
+</body>
+</html>
