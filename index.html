@@ -141,7 +141,7 @@
     }
 
     /* =========================================
-       感性引言區 (Warm Touch Quote)
+       感性引言區
        ========================================= */
     .quote-box {
       margin: -16px 16px 20px;
@@ -165,12 +165,12 @@
     }
 
     /* =========================================
-       手機黏貼導覽 (簡單兩案切換)
+       手機黏貼導覽
        ========================================= */
     .tab-bar {
       display: flex;
-      gap: 8px;
-      padding: 10px 16px 12px;
+      gap: 6px;
+      padding: 10px 14px 12px;
       position: sticky;
       top: 0;
       background: rgba(255, 255, 255, 0.96);
@@ -181,8 +181,8 @@
 
     .tab-btn {
       flex: 1;
-      padding: 10px 4px;
-      font-size: 13.5px;
+      padding: 9px 2px;
+      font-size: 12.5px;
       font-weight: 700;
       border: 1.5px solid var(--blue-border);
       background: #ffffff;
@@ -193,11 +193,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2px;
+      gap: 1px;
     }
 
     .tab-btn small {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: normal;
     }
 
@@ -218,7 +218,7 @@
     }
 
     /* =========================================
-       感性對比卡片 (極簡文字 ✕ 視覺對焦)
+       感性對比卡片
        ========================================= */
     .visual-compare-card {
       background: #ffffff;
@@ -398,7 +398,6 @@
       margin-top: 3px;
     }
 
-    /* 情感化 4 大保障亮點 */
     .heart-points {
       list-style: none;
       margin-top: 14px;
@@ -429,7 +428,7 @@
     }
 
     /* =========================================
-       生活陪伴意境圖文區 (Second Image Block)
+       生活陪伴意境圖文區
        ========================================= */
     .story-card {
       background: #ffffff;
@@ -504,7 +503,7 @@
     }
 
     /* =========================================
-       方案 A 概要卡片 (淡化但清楚)
+       方案 A 概要卡片
        ========================================= */
     .plan-a-card {
       background: #ffffff;
@@ -576,13 +575,301 @@
       line-height: 1.55;
     }
 
+    /* ===================================================
+       後半段：原保障缺口盤點與圓滿補足專區 (全新加入)
+       =================================================== */
+    .gap-review-section {
+      background: linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
+      border-top: 3px solid var(--blue-light);
+      padding: 24px 0 10px;
+      margin-top: 10px;
+    }
+
+    .section-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-subtle);
+      color: var(--blue-dark);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      border: 1px solid var(--blue-border);
+    }
+
+    .gap-section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .gap-section-intro {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    /* 圖片展示卡 (附點擊放大效果) */
+    .chart-display-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 18px;
+      border: 1px solid var(--blue-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .chart-header-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zoom-hint {
+      font-size: 11px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chart-img-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      cursor: zoom-in;
+    }
+
+    .chart-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .chart-caption {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.5;
+      background: var(--blue-subtle);
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    /* 痛點標籤警示框 */
+    .vulnerability-box {
+      background: #fff8f8;
+      border: 1.5px solid #fecdd3;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .vulnerability-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #be123c;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .vulnerability-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #fecdd3;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .vulnerability-item:last-child {
+      border-bottom: none;
+    }
+
+    .v-num {
+      background: #be123c;
+      color: #ffffff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .v-content strong {
+      color: #9f1239;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* 補足後圓滿大升級對照卡 */
+    .transformation-card {
+      background: linear-gradient(145deg, #fdf8fa 0%, #edf5f9 100%);
+      border: 2px solid var(--pink-primary);
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .trans-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .trans-row {
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(74, 107, 130, 0.12);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .trans-row-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+    }
+
+    .trans-compare-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .before-val {
+      color: #94a3b8;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+
+    .after-val {
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 14.5px;
+    }
+
+    .trans-badge {
+      font-size: 10.5px;
+      background: #fdf2f5;
+      color: var(--pink-dark);
+      border: 1px solid var(--pink-border);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* 圓滿金句大框 */
+    .completeness-quote {
+      background: linear-gradient(135deg, #273d4d 0%, #3a5b72 100%);
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      margin-bottom: 22px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .completeness-quote h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffdbe4;
+      margin-bottom: 8px;
+    }
+
+    .completeness-quote p {
+      font-size: 13px;
+      color: #e2e8f0;
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       LIGHTBOX 圖片彈窗
+       ========================================= */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 96%;
+      max-height: 88vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     /* =========================================
        FOOTER (顧問服務資訊)
        ========================================= */
     .footer {
       background: #ffffff;
       border-top: 2px solid var(--pink-border);
-      padding: 24px 20px 20px;
+      padding: 26px 20px 22px;
       text-align: center;
     }
 
@@ -659,7 +946,7 @@
     @media print {
       body { background: #ffffff; padding: 0; }
       .poster-container { box-shadow: none; max-width: 100%; }
-      .tab-bar, .print-bar, .phone-btn { display: none !important; }
+      .tab-bar, .print-bar, .phone-btn, .zoom-hint { display: none !important; }
       .section-view { display: block !important; }
     }
   </style>
@@ -696,6 +983,10 @@
       <span>核心溫度比較</span>
       <small>一眼看懂</small>
     </button>
+    <button class="tab-btn" onclick="switchTab('gapReview', this)">
+      <span>補齊缺口分析</span>
+      <small>原保單健檢</small>
+    </button>
     <button class="tab-btn" onclick="switchTab('planB', this)">
       <span>首選 B 方案</span>
       <small>年繳 36,909</small>
@@ -708,7 +999,7 @@
 
   <div class="content-pad">
 
-    <!-- ================= 區塊 1：極簡 3 大溫度對照 (感性對比卡片) ================= -->
+    <!-- ================= 前半段 區塊 1：極簡 3 大溫度對照 ================= -->
     <div class="visual-compare-card section-view" id="view-compare">
       <div class="card-title-row">
         <div class="card-title">
@@ -786,7 +1077,7 @@
       </div>
     </div>
 
-    <!-- ================= 區塊 2：生活陪伴意境圖文 (溫暖故事箱) ================= -->
+    <!-- ================= 前半段 區塊 2：生活陪伴意境圖文 ================= -->
     <div class="story-card section-view" id="view-story">
       <div class="story-img-box">
         <img src="warm_care_companion.jpg" alt="溫柔細膩的長照陪伴" class="story-img">
@@ -817,7 +1108,7 @@
       </div>
     </div>
 
-    <!-- ================= 區塊 3：方案 B 推薦大卡 (溫暖主推) ================= -->
+    <!-- ================= 前半段 區塊 3：方案 B 推薦大卡 ================= -->
     <div class="plan-b-spotlight section-view" id="view-planB">
       <div class="crown-badge">
         👑 顧問真心首選推薦
@@ -861,7 +1152,7 @@
       </ul>
     </div>
 
-    <!-- ================= 區塊 4：方案 A 概要卡片 ================= -->
+    <!-- ================= 前半段 區塊 4：方案 A 概要卡片 ================= -->
     <div class="plan-a-card section-view" id="view-planA">
       <div class="plan-a-header">
         <div class="plan-a-title">方案 A【基礎打底型】</div>
@@ -874,8 +1165,8 @@
       </div>
     </div>
 
-    <!-- ================= 區塊 5：貼心折衷方案 (A+ 聰明搭) ================= -->
-    <div class="clever-choice">
+    <!-- ================= 前半段 區塊 5：貼心折衷方案 ================= -->
+    <div class="clever-choice section-view" id="view-clever">
       <div class="clever-badge">💡 預算有限的私房搭法</div>
       <div class="clever-title">「方案 A+ 折衷組合」年繳約 22,450 元</div>
       <div class="clever-desc">
@@ -883,9 +1174,178 @@
       </div>
     </div>
 
+    <!-- ===================================================
+       後半段：原保障缺口盤點與圓滿補足專區 (全新焦點)
+       =================================================== -->
+    <div class="gap-review-section section-view" id="view-gapReview">
+      
+      <div style="text-align: center; margin-bottom: 14px;">
+        <div class="section-badge-pill">
+          📋 原有保障盤點與健檢洞察
+        </div>
+        <h2 class="gap-section-title">看見原有的盲點<br>拼上守護人生的最後拼圖</h2>
+        <p class="gap-section-intro">
+          欣妤，您過去已經很有責任感地規劃了多張保單。然而隨著年紀增長與醫療型態演進，經過專業盤點後發現：<strong>原有防線存在兩道最脆弱的缺口</strong>。
+        </p>
+      </div>
+
+      <!-- 圖一：原有保單總覽 -->
+      <div class="chart-display-card">
+        <div class="chart-header">
+          <div class="chart-header-title">
+            <span>📑</span> 蔡欣妤小姐・現有保單一覽表
+          </div>
+          <span class="zoom-hint" onclick="openLightbox('policy_portfolio_table.png')">🔍 點擊放大</span>
+        </div>
+        <div class="chart-img-wrapper" onclick="openLightbox('policy_portfolio_table.png')">
+          <img src="policy_portfolio_table.png" alt="蔡欣妤保單一覽表" class="chart-img">
+        </div>
+        <div class="chart-caption">
+          💡 <strong>盤點觀察：</strong>過去規劃以富邦重大傷病、美元壽險與早期安泰終身醫療為主，雖然打下基礎，但缺乏應對長期臥床與高額自費的現代化防線。
+        </div>
+      </div>
+
+      <!-- 圖二：保障視圖 (雷達圖) -->
+      <div class="chart-display-card">
+        <div class="chart-header">
+          <div class="chart-header-title">
+            <span>🎯</span> 蔡欣妤小姐・保障現況圓形分佈圖
+          </div>
+          <span class="zoom-hint" onclick="openLightbox('policy_coverage_chart.png')">🔍 點擊放大</span>
+        </div>
+        <div class="chart-img-wrapper" onclick="openLightbox('policy_coverage_chart.png')">
+          <img src="policy_coverage_chart.png" alt="蔡欣妤保障分佈圖" class="chart-img">
+        </div>
+        <div class="chart-caption">
+          ⚠️ <strong>致命空白：</strong>請見圓餅圖下方灰白色空白區塊——<strong>長期照顧（一次性/分期）與特定傷病「全數為零」</strong>，這是風險來臨時最沉重的負擔！
+        </div>
+      </div>
+
+      <!-- 痛點歸納警示框 -->
+      <div class="vulnerability-box">
+        <div class="vulnerability-title">
+          <span>⚠️</span> 原有保障的 2 大核心脆弱點
+        </div>
+
+        <div class="vulnerability-item">
+          <div class="v-num">1</div>
+          <div class="v-content">
+            <strong>長期照顧生活金「近乎真空（0 元）」</strong>
+            原有保單失能扶助金一年僅 1.5 萬元（平均每月僅 1,250 元），長照一次金與分期金更是 0 元！一旦需要請看護（每月 3~4 萬），家裡每月將面臨龐大資金黑洞。
+          </div>
+        </div>
+
+        <div class="vulnerability-item">
+          <div class="v-num">2</div>
+          <div class="v-content">
+            <strong>實支實付醫療雜費「僅有 16 萬」，病房僅 1,500 元</strong>
+            早期的實支實付額度有限。如今自費達文西微創手術一次動輒 25~30 萬、標靶藥物動輒數十萬，16 萬雜費幾天就用罄，雙人/單人病房更是天天倒貼。
+          </div>
+        </div>
+      </div>
+
+      <!-- 補足後前後蛻變卡片 -->
+      <div class="transformation-card">
+        <div class="trans-title">
+          🌸 經過本次補足後・保障真正圓滿完整
+        </div>
+
+        <!-- 蛻變項目 1 -->
+        <div class="trans-row">
+          <div class="trans-row-header">
+            <span>🛡️ 長照每月生活扶助金 (10年)</span>
+            <span class="trans-badge">月月有依靠</span>
+          </div>
+          <div class="trans-compare-flow">
+            <span class="before-val">原本：0 元 (真空)</span>
+            <span style="color:var(--pink-dark); font-weight:bold;">➔</span>
+            <span class="after-val">補足後：20,000 元 / 月</span>
+          </div>
+          <div style="font-size:11px; color:#64748b; margin-top:4px;">
+            ★ 10年累計注入 <strong>240 萬元</strong>！看護薪資直接全包。
+          </div>
+        </div>
+
+        <!-- 蛻變項目 2 -->
+        <div class="trans-row">
+          <div class="trans-row-header">
+            <span>🌟 長照 / 完全失能一次金</span>
+            <span class="trans-badge">即時應急款</span>
+          </div>
+          <div class="trans-compare-flow">
+            <span class="before-val">原本：0 元</span>
+            <span style="color:var(--pink-dark); font-weight:bold;">➔</span>
+            <span class="after-val">補足後：240,000 元</span>
+          </div>
+          <div style="font-size:11px; color:#64748b; margin-top:4px;">
+            ★ 確診即領，從容添購照護輔具與緊急安家。
+          </div>
+        </div>
+
+        <!-- 蛻變項目 3 -->
+        <div class="trans-row">
+          <div class="trans-row-header">
+            <span>🏥 自費住院醫療雜費</span>
+            <span class="trans-badge">高額自費自由</span>
+          </div>
+          <div class="trans-compare-flow">
+            <span class="before-val">原本：僅 16 萬元</span>
+            <span style="color:var(--pink-dark); font-weight:bold;">➔</span>
+            <span class="after-val">補足後：超額再加 40 萬</span>
+          </div>
+          <div style="font-size:11px; color:#64748b; margin-top:4px;">
+            ★ 與舊保單無縫疊加，總自費防禦力一舉提升至 <strong>56 萬元</strong>！
+          </div>
+        </div>
+
+        <!-- 蛻變項目 4 -->
+        <div class="trans-row">
+          <div class="trans-row-header">
+            <span>🛏️ 每日病房自費差額</span>
+            <span class="trans-badge">尊嚴安心靜養</span>
+          </div>
+          <div class="trans-compare-flow">
+            <span class="before-val">原本：僅 1,500 元/日</span>
+            <span style="color:var(--pink-dark); font-weight:bold;">➔</span>
+            <span class="after-val">補足後：再加 4,000 元/日</span>
+          </div>
+          <div style="font-size:11px; color:#64748b; margin-top:4px;">
+            ★ 單人病房差額安心入住，不需擔心倒貼。
+          </div>
+        </div>
+
+        <!-- 蛻變項目 5 -->
+        <div class="trans-row">
+          <div class="trans-row-header">
+            <span>🕊️ 1 ~ 8 級失能保費豁免</span>
+            <span class="trans-badge">保護傘不中斷</span>
+          </div>
+          <div class="trans-compare-flow">
+            <span class="before-val">原本：無完整豁免</span>
+            <span style="color:var(--pink-dark); font-weight:bold;">➔</span>
+            <span class="after-val">補足後：全球代繳後續保費</span>
+          </div>
+          <div style="font-size:11px; color:#64748b; margin-top:4px;">
+            ★ 失去工作能力時，全球人壽接棒繳費，終身守護不中斷。
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 圓滿金句 -->
+      <div class="completeness-quote">
+        <h3>✨ 拼上最後一塊拼圖，讓防護圓融無憂</h3>
+        <p>
+          「補足這份保障，不是增加生活負擔，而是讓您過去繳的每一分保費，發揮 100% 完整的守護力量。<br>
+          當那個殘缺的圓被溫柔填滿，您就可以真正放下隱憂，優雅享受未來的每一天。」
+        </p>
+      </div>
+
+    </div> <!-- /gap-review-section -->
+
   </div> <!-- /content-pad -->
 
-  <!-- ================= 底部 FOOTER ================= -->
+  <!-- ================= 底部 FOOTER (顧問服務資訊) ================= -->
   <footer class="footer">
     <div class="consultant-badge">
       <div class="consultant-name">
@@ -911,6 +1371,12 @@
 
 </div>
 
+<!-- ================= 圖片燈箱彈窗 (Lightbox Modal) ================= -->
+<div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img src="" alt="放大圖" class="lightbox-img" id="lightboxImg" onclick="event.stopPropagation()">
+</div>
+
 <!-- ================= 互動控制腳本 ================= -->
 <script>
   function switchTab(mode, btn) {
@@ -921,26 +1387,55 @@
     const viewStory = document.getElementById('view-story');
     const viewPlanB = document.getElementById('view-planB');
     const viewPlanA = document.getElementById('view-planA');
+    const viewClever = document.getElementById('view-clever');
+    const viewGapReview = document.getElementById('view-gapReview');
 
     if (mode === 'planA') {
       viewCompare.style.display = 'none';
       viewStory.style.display = 'none';
       viewPlanB.style.display = 'none';
       viewPlanA.style.display = 'block';
+      viewClever.style.display = 'none';
+      viewGapReview.style.display = 'none';
       viewPlanA.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (mode === 'planB') {
       viewCompare.style.display = 'none';
       viewStory.style.display = 'block';
       viewPlanB.style.display = 'block';
       viewPlanA.style.display = 'none';
+      viewClever.style.display = 'block';
+      viewGapReview.style.display = 'none';
       viewPlanB.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (mode === 'gapReview') {
+      viewCompare.style.display = 'none';
+      viewStory.style.display = 'none';
+      viewPlanB.style.display = 'none';
+      viewPlanA.style.display = 'none';
+      viewClever.style.display = 'none';
+      viewGapReview.style.display = 'block';
+      viewGapReview.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
+      // 顯示全部 (全貌檢視)
       viewCompare.style.display = 'block';
       viewStory.style.display = 'block';
       viewPlanB.style.display = 'block';
       viewPlanA.style.display = 'block';
+      viewClever.style.display = 'block';
+      viewGapReview.style.display = 'block';
       viewCompare.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  // Lightbox 控制
+  function openLightbox(src) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    img.src = src;
+    modal.classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').classList.remove('active');
   }
 </script>
 
